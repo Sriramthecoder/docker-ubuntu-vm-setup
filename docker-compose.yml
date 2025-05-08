@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  ubuntu-vm:
+    image: ubuntu:22.04
+    container_name: ubuntu-vm
+    hostname: ubuntu-vm
+    restart: unless-stopped
+    ports:
+      - "2222:22"    # SSH
+      - "8080:80"    # Optional: Web server
+    volumes:
+      - ./storage:/root/storage  # Persistent storage
+    environment:
+      - TZ=UTC
+    tty: true
+    stdin_open: true
