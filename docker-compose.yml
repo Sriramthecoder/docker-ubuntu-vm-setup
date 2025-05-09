@@ -7,10 +7,9 @@ services:
     hostname: ubuntu-vm
     restart: unless-stopped
     ports:
-      - "2222:22"    # SSH
-      - "8080:80"    # Optional: Web server
+      - "2222:22"  
     volumes:
-      - ./storage:/root/storage  # Persistent storage
+      - ./storage:/root/storage  
     environment:
       - TZ=UTC
     tty: true
